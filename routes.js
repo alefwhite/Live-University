@@ -1,0 +1,6 @@
+const { Router } = require('express');
+const routes = new Router();
+
+routes.get('/', (req, res) => res.render('index'));
+
+module.exports = routes;
