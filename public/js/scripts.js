@@ -42,6 +42,7 @@ const itemA = document.querySelector("#itemA").addEventListener("click", () => {
         List();
     }
 
+    document.getElementById("quantity").focus();
 });
 
 const itemB = document.querySelector("#itemB").addEventListener("click", () => {
@@ -69,6 +70,8 @@ const itemB = document.querySelector("#itemB").addEventListener("click", () => {
 
         List();
     }
+
+    document.getElementById("quantity").focus();
 });
 
 
@@ -80,6 +83,13 @@ container.onclick = function() {
 
 const quantity = document.getElementById("quantity");
 quantity.addEventListener("change", () => {
+
+    if(quantity.value > 0) {
+        quantity.classList.remove("quantityEmpty");
+    } else {
+        quantity.classList.add("quantityEmpty"); 
+    }
+
     itensList = [];
 
     document.getElementById("itens").innerHTML = "";
@@ -100,8 +110,7 @@ quantity.addEventListener("change", () => {
                 <div class="name">Item B${i + 1}</div>
             </div>
         `);
-
-       
+        
     }
 
     List();
@@ -156,4 +165,12 @@ function List() {
             alert("End of items")
         }
     });
-}
+};
+
+
+const qtd = document.querySelector("#quantity");
+
+if(!qtd.value || qtd.value === 0) {
+    qtd.classList.add("quantityEmpty");
+} 
+

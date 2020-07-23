@@ -62,6 +62,10 @@
     border-bottom: 1px solid var(--color-green);
 }
 
+.quantityEmpty {
+    border-color: red !important;
+}
+
 .quantity a > label{
     cursor: pointer;
 }
